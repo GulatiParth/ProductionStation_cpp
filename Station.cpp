@@ -16,7 +16,7 @@ using namespace sdds;
 size_t Station::m_widthField = 0;
 size_t Station::id_generator = 0;
 
-Station::Station() 
+Station::Station()
 {
     id = 0;
     next_serial_no = 0;
@@ -25,7 +25,7 @@ Station::Station()
     description = "";
 }
 
-Station::Station(const string& str) 
+Station::Station(const string& str)
 {
     Utilities util;
     bool more = true;
@@ -44,6 +44,7 @@ Station::Station(const string& str)
     {
         m_widthField = util_width_field;
     }
+
     description = util.extractToken(str, pos, more);
 }
 
@@ -64,7 +65,7 @@ size_t Station::getQuantity() const
     return quantity;
 }
 
-void Station::updateQuantity() 
+void Station::updateQuantity()
 {
     //Should not drop below 0
     if (quantity)
@@ -83,7 +84,7 @@ void Station::display(ostream& os, bool full) const
 
     os << setfill('0') << setw(6) << next_serial_no << " | ";
 
-    if (full) 
+    if (full)
     {
         os << setfill(' ') << setw(4) << quantity << " | ";
         os << description;

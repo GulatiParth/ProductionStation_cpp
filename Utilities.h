@@ -13,7 +13,7 @@ using namespace std;
 
 namespace sdds 
 {
-    class Utilities
+    class Utilities 
     {
         size_t m_widthField;
         static char m_delimiter;

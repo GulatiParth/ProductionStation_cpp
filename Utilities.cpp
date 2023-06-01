@@ -13,22 +13,22 @@ using namespace sdds;
 
 char Utilities::m_delimiter = ' ';      //Initializing static member
 
-Utilities::Utilities() 
+Utilities::Utilities()
 {
     m_widthField = 1;
 }
 
-void Utilities::setFieldWidth(size_t newWidth) 
+void Utilities::setFieldWidth(size_t newWidth)
 {
     m_widthField = newWidth;
 }
 
-size_t Utilities::getFieldWidth() const 
+size_t Utilities::getFieldWidth() const
 {
     return m_widthField;
 }
 
-string Utilities::trimString(string str) 
+string Utilities::trimString(string str)
 {
     string buffer = "";
     int start = 0, end = str.length() - 1;
@@ -45,11 +45,12 @@ string Utilities::trimString(string str)
     {
         buffer += str[i];
     }
+
     return buffer;
 }
 
 
-string Utilities::extractToken(const string& str, size_t& next_pos, bool& more) 
+string Utilities::extractToken(const string& str, size_t& next_pos, bool& more)
 {
     const size_t n = str.length();
 
@@ -68,7 +69,7 @@ string Utilities::extractToken(const string& str, size_t& next_pos, bool& more)
     }
 
     string res = "";
-    
+
     if (more)       // successful, return a copy of the extracted token found
     {
         res = str.substr(next_pos, pos - next_pos);
@@ -85,12 +86,12 @@ string Utilities::extractToken(const string& str, size_t& next_pos, bool& more)
     return trimString(res);
 }
 
-void Utilities::setDelimiter(char newDelimiter) 
+void Utilities::setDelimiter(char newDelimiter)
 {
     m_delimiter = newDelimiter;
 }
 
-char Utilities::getDelimiter() 
+char Utilities::getDelimiter()
 {
     return m_delimiter;
 }
