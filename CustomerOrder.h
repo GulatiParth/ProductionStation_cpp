@@ -1,4 +1,6 @@
 // Name: Parth Gulati
+// Seneca Student ID: 131697211
+// Seneca email: pgulati9@myseneca.ca
 // Date of completion: July 3,2022
 //
 // I confirm that I am the only author of this file
@@ -25,8 +27,7 @@ namespace sdds
             Item(const std::string& src) : m_itemName(src) {};
         };
 
-        string m_name;
-        string m_product;
+        string m_name, m_product;
         size_t m_cntItem;
         Item** m_lstItem;
 

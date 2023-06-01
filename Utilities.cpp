@@ -1,4 +1,6 @@
 // Name: Parth Gulati
+// Seneca Student ID: 131697211
+// Seneca email: pgulati9@myseneca.ca
 // Date of completion: July 3,2022
 //
 // I confirm that I am the only author of this file
@@ -28,7 +30,7 @@ size_t Utilities::getFieldWidth() const
     return m_widthField;
 }
 
-string Utilities::trimString(string str)
+string Utilities::trimString(string str) 
 {
     string buffer = "";
     int start = 0, end = str.length() - 1;
@@ -50,15 +52,15 @@ string Utilities::trimString(string str)
 }
 
 
-string Utilities::extractToken(const string& str, size_t& next_pos, bool& more)
+string Utilities::extractToken(const string& str, size_t& next_pos, bool& more) 
 {
     const size_t n = str.length();
 
     //reports an exception if a delimiter is found at next_pos
-    if (str[next_pos] == m_delimiter)
+    if (str[next_pos] == m_delimiter) 
     {
         more = false;
-        throw std::string("Error: Delimiter is found at next_pos");
+        throw string("Error: Delimiter is found at next_pos");
     }
 
     //Find the position of delimiter
@@ -81,7 +83,7 @@ string Utilities::extractToken(const string& str, size_t& next_pos, bool& more)
         }
     }
 
-    more = !(pos == n); // if pos == n ==> more = 0 Otherwise more = 1 
+    more = !(pos == n);
 
     return trimString(res);
 }
@@ -91,7 +93,7 @@ void Utilities::setDelimiter(char newDelimiter)
     m_delimiter = newDelimiter;
 }
 
-char Utilities::getDelimiter()
+char Utilities::getDelimiter() 
 {
     return m_delimiter;
 }

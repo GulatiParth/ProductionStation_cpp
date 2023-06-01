@@ -1,9 +1,10 @@
 // Name: Parth Gulati
+// Seneca Student ID: 131697211
+// Seneca email: pgulati9@myseneca.ca
 // Date of completion: July 3,2022
 //
 // I confirm that I am the only author of this file
 //   and the content was created entirely by me.
-
 #include<string>
 #include<fstream>
 #include<iomanip>
@@ -48,7 +49,7 @@ Station::Station(const string& str)
     description = util.extractToken(str, pos, more);
 }
 
-const string& Station::getItemName() const 
+const string& Station::getItemName() const
 {
     return name;
 }
@@ -65,9 +66,8 @@ size_t Station::getQuantity() const
     return quantity;
 }
 
-void Station::updateQuantity()
+void Station::updateQuantity() 
 {
-    //Should not drop below 0
     if (quantity)
     {
         quantity--;
@@ -76,7 +76,7 @@ void Station::updateQuantity()
 
 void Station::display(ostream& os, bool full) const 
 {
-    os << setfill('0') << setw(3) << id << " | ";
+    os << setfill('0') << right << setw(3) << id << " | ";
 
     os << left << setfill(' ') << setw(m_widthField) << name << " | ";
 
@@ -84,7 +84,7 @@ void Station::display(ostream& os, bool full) const
 
     os << setfill('0') << setw(6) << next_serial_no << " | ";
 
-    if (full)
+    if (full) 
     {
         os << setfill(' ') << setw(4) << quantity << " | ";
         os << description;
